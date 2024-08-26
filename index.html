@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beranda</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+*,
+
+html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #6cc5fc;
+    font-family: "Segoe UI", sans-serif;
+}
+        nav {
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            align-items: center;
+        }
+
+        nav .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .logo-container img {
+            width: 40px;
+            margin-right: 0.5rem;
+        }
+
+        nav .logo-container .title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #191919;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 0rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            transition: transform 300ms ease;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid #dae40f;
+            box-shadow: 0px 4px 6px rgba(252, 248, 26, 0.1);
+            transform: translateX(100%);
+        }
+
+        nav ul.visible {
+            transform: translateX(0);
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #191919;
+            font-weight: 600;
+            padding: 1px 1rem;
+            display: block;
+            transition: color 300ms, background-color 300ms;
+        }
+
+        nav ul li a:hover {
+            color: orangered;
+            background-color: #f0f0f0;
+        }
+
+        .menu-icon {
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        main {
+            padding-top: 7rem;
+            margin: 1rem;
+        
+        }
+
+        @media only screen and (min-width: 500px) {
+            nav ul {
+                display: flex;
+                position: static;
+                background-color: transparent;
+                box-shadow: none;
+                transform: none;
+                transition: none;
+            }
+
+            nav ul.visible {
+                display: flex;
+                transform: none;
+            }
+
+            .menu-icon {
+                display: none;
+            }
+        }
+        main {
+      background-color: #f8f9fa; /* Warna latar belakang yang lembut */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: justify; /* Membuat teks rata kanan-kiri */
+      padding-bottom: 70px;
+    }
+    h1, h2 {
+      color: #007bff; /* Warna biru untuk judul */
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    p, li {
+      font-size: 1.1em; /* Ukuran font sedikit lebih besar */
+      line-height: 1.6; /* Jarak antar baris lebih besar untuk keterbacaan */
+    }
+    .section-title {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      margin-top: 20px;
+    }
+    td {
+      padding: 1px;
+      vertical-align: top;
+    }
+    .key {
+      width: 30%; /* Lebar kolom kunci */
+      font-weight: bold;
+    }
+    .info-list {
+      margin-bottom: 20px;
+    }
+    .info-item {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    .info-item div {
+      padding: 1px;
+    }
+    .info-key {
+      flex: 0 0 30%; /* Lebar tetap untuk label */
+      font-weight: bold;
+      text-align: left;
+    }
+    .info-separator {
+      flex: 0 0 5%; /* Lebar tetap untuk separator */
+      text-align: center;
+    }
+    .info-value {
+      flex: 1; /* Lebar yang menyesuaikan untuk nilai */
+      text-align: left;
+    }
+    .announcement-box {
+        background-color: #ffffff; /* Warna latar belakang putih */
+        border: 2px solid #007bff; /* Border berwarna biru */
+        border-radius: 8px; /* Sudut yang melengkung */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan kotak */
+        padding: 20px;
+        margin-top: 20px;
+        transition: box-shadow 300ms ease, transform 300ms ease; /* Transisi untuk efek bayangan dan transformasi */
+    }
+
+    .announcement-box:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan lebih gelap saat hover */
+        transform: translateY(-5px); /* Efek naik sedikit saat hover */
+    }
+
+    .announcement-title {
+        color: #007bff; /* Warna judul biru */
+        font-size: 1.5rem; /* Ukuran font judul lebih besar */
+        margin-bottom: 10px;
+        font-weight: bold;
+        border-bottom: 2px solid #007bff; /* Garis bawah untuk judul */
+        padding-bottom: 5px;
+    }
+
+    .announcement-content {
+        font-size: 1.1rem; /* Ukuran font konten */
+        line-height: 1.6; /* Jarak antar baris konten */
+        color: #333; /* Warna teks konten */
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.PEzGjWR5KT5_WBfoONYflwHaHZ&pid=Api&P=0&h=180" alt="my-avatar" />
+            <span class="title">MTs. AL-UTSMANI</span>
+        </div>
+        <div id="menu-icon" class="menu-icon">
+            <i class="ph-fill ph-list"></i>
+        </div>
+        <ul id="menu-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pembayaran.html">Pembayaran</a></li>
+            <li><a href="kwitansi.html">Kwitansi</a></li>
+            <li><a href="https://wa.link/971ooz">Kontak</a></li>
+        </ul>
+    </nav>
+    <div class="container mt-5">
+        <main>
+          <h1>___</h1>
+          <h2>Profil Madrasah</h2>
+          <div class="info-list">
+            <div class="info-item">
+              <div class="info-key">Nama Madrasah</div>
+              <div class="info-separator">:</div>
+              <div class="info-value">MTs Al-Utsmani</div>
+            </div>
+            <div class="info-item">
+              <div class="info-key">No. Statistik Madrasah</div>
+              <div class="info-separator">:</div>
+              <div class="info-value">121235110097</div>
+            </div>
+            <div class="info-item">
+              <div class="info-key">NPSN Madrasah</div>
+              <div class="info-separator">:</div>
+              <div class="info-value">20581740</div>
+            </div>
+            <div class="info-item">
+              <div class="info-key">Akreditasi Madrasah</div>
+              <div class="info-separator">:</div>
+              <div class="info-value">Terakreditasi C</div>
+            </div>
+            <div class="info-item">
+              <div class="info-key">No. Telepon</div>
+              <div class="info-separator">:</div>
+              <div class="info-value">081234777850</div>
+            </div>
+            <div class="info-item">
+              <div class="info-key">Alamat Lengkap Madrasah</div>
+              <div class="info-separator">:</div>
+              <div class="info-value">Dusun Beddian, Desa Jambesari, Kec. Jambesari Darus Sholah, Kab. Bondowoso, Provinsi Jawa Timur</div>
+            </div>
+          </div>
+          <ul>
+          <h2 class="section-title">Visi</h2>
+          <li>Terbentuknya Kepribadian mandiri, berbasis keilmuan, keluhuran akhlak, dan berwawasan kebangsaan.</li>
+          <h2 class="section-title">Misi</h2>
+            <li>Mencetak generasi muda kader-kader umat yang bertaqwa, teguh pendirian, berakhlakul karimah, bertanggung jawab, serta menguasai ilmu pengetahuan dan teknologi, dan memiliki iman dan taqwa.</li>
+            <li>Menumbuhkan kecintaan terhadap ajaran-ajaran Islam dan pendidikan nasional, guna mengamalkannya dengan penuh keyakinan, kesadaran, serta rasa tanggung jawab.</li>
+            <li>Membekali siswa dengan keterampilan dan keahlian yang dapat dikembangkan secara profesional dan menjadi manusia yang mempunyai kepribadian kokoh serta memiliki kedisiplinan yang tinggi.</li>
+            <li>Mencetak siswa yang kreatif, produktif, dan berpotensi.</li>
+          </ul>
+
+          </table>
+      </main>
+      <!-- Kotak Pengumuman -->
+      <div class="announcement-box">
+          <div class="announcement-title">Pengumuman</div>
+          <p>- Jika anda ingin mengetahui pembayaran putra anda, KLIK di menu "PEMBAYARAN / KWITANSI".</p>
+          <p>- Diharapkan melunasi pembayaran sebelum Ujian Semester dimulai, karena menjadi persyaratan keikut sertaan Peserta Didik.</p>
+          <p>- Jika ada pertanyaan apa pun terkait Lembaga, hubungi kontak layanan KLIK di menu "KONTAK".</p>
+      </div>
+  </div>
+    <script>
+        const menuIcon = document.getElementById("menu-icon");
+        const menuList = document.getElementById("menu-list");
+
+        menuIcon.addEventListener("click", () => {
+            menuList.classList.toggle("visible");
+        });
+    </script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wali Kelas</title>
+    <!-- Bootstrap CSS for styling -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    
+</head>
+<body>
+<style>
+        html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+h1 {
+  font-family:monospace;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+    /* Sidebar styling */
+    .sidebar {
+        min-width: 70px;
+        max-width: 220px;
+        background-color: #343a40;
+        color: #fff;
+        transition: all 0.3s;
+        height: 100vh;
+        position: fixed;
+        overflow-y: auto;
+    }
+
+    .sidebar h3 {
+        font-size: 1.2rem;
+        color: #ffffff;
+        text-transform: uppercase;
+        margin: 15px;
+        text-align: center;
+    }
+
+    .sidebar ul {
+        padding: 0;
+        list-style: none;
+        margin: 0;
+    }
+
+    .sidebar ul li {
+        padding: 10px 15px;
+        margin: 5px 0;
+    }
+
+    .sidebar ul li a {
+        color: #ffffff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+    }
+
+    .sidebar ul li a:hover,
+    .sidebar ul li a.active {
+        background-color: #007bff;
+        color: #ffffff;
+        border-radius: 4px;
+    }
+
+    .sidebar ul li a i {
+        margin-right: 10px;
+    }
+
+    .sidebar ul ul {
+        padding-left: 20px;
+    }
+
+    .sidebar ul ul li {
+        padding: 5px 0;
+    }
+
+    .sidebar ul ul li a {
+        font-size: 0.85rem;
+    }
+
+    /* Main content styling */
+    .content {
+        margin-left: 80px;
+        margin-right: 0px;
+        padding: 0px;
+        font-size: 10px;
+        font-weight: bold;
+        transition: all 0.3s;
+    }
+
+    /* Menu icon styling */
+    .menu-icon {
+        font-size: 1.5rem;
+        color: #0281ff;
+        cursor: pointer;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+    }
+
+    .menu-icon:hover {
+        color: #e5ff00;
+    }
+
+    /* Hide sidebar and adjust content when sidebar is hidden */
+    .sidebar.hide {
+        margin-left: -220px;
+    }
+
+    .content.hide {
+        margin-left: 0;
+    }
+
+    @media (max-width: 50px) {
+        .sidebar {
+            margin-left: -220px; /* Sidebar hidden initially on smaller screens */
+        }
+
+        .sidebar.active {
+            margin-left: 0;
+        }
+
+        .content {
+            margin-left: 0;
+        }
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .table-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 1px;
+        margin: 1px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 1px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff; /* Solid background for table */
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #018afa;
+    }
+
+    th {
+        background-color: #007bff;
+        color: rgb(255, 255, 255);
+    }
+
+    tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+    .content h2 {
+      text-align: center;
+      margin-bottom: 0; /* Remove margin-bottom from h2 */
+    }
+    .content p {
+      font-size: 10px;
+      font-weight: bolder;
+      margin-top: 0; /* Remove margin-top from p */
+    }
+    .logo-icon {
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    margin-left: 10px; /* Space between icon and logo */
+    background-color: transparent; /* Ensure background is transparent */
+    border: none; /* Remove any border */
+        }
+    </style>
+<div class="menu-icon d-flex align-items-center">
+    <i class="fas fa-bars"></i> <!-- Menu icon for toggling sidebar -->
+    <img src="https://tse2.mm.bing.net/th?id=OIP.PEzGjWR5KT5_WBfoONYflwHaHZ&pid=Api&P=0&h=180" alt="Logo" class="logo-icon"> <!-- Logo next to the menu icon -->
+</div>
+<div class="d-flex">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3 class="text-center py-3"></h3>
+        <ul class="list-unstyled">
+            <li><a href="walikelas.html" class="">Wali Kelas</a></li>
+            <li>
+                <a href="#" class="toggle-submenu">Absen Kelas</a>
+                <ul class="list-unstyled pl-3 submenu" style="display: none;">
+                    <li><a href="viia.html">7A</a></li>
+                    <li><a href="viia.html">7B</a></li>
+                    <li><a href="viia.html">7C</a></li>
+                    <li><a href="viia.html">7D</a></li>
+                    <li><a href="viia.html">7E</a></li>
+                    <li><a href="viia.html">7F</a></li>
+                    <li><a href="viia.html">7G</a></li>
+                    <li><a href="viia.html">7H</a></li>
+                    <li><a href="viia.html">8A</a></li>
+                    <li><a href="viia.html">8B</a></li>
+                    <li><a href="viia.html">8C</a></li>
+                    <li><a href="viia.html">8D</a></li>
+                    <li><a href="viia.html">8E</a></li>
+                    <li><a href="viia.html">8F</a></li>
+                    <li><a href="viia.html">8G</a></li>
+                    <li><a href="viia.html">8H</a></li>
+                    <li><a href="viia.html">8I</a></li>
+                    <li><a href="viia.html">9A</a></li>
+                    <li><a href="viia.html">9B</a></li>
+                    <li><a href="viia.html">9C</a></li>
+                    <li><a href="viia.html">9D</a></li>
+                    <li><a href="viia.html">9E</a></li>
+                    <li><a href="viia.html">9F</a></li>
+                    <li><a href="viia.html">9G</a></li>
+                    <li><a href="viia.html">9H</a></li>
+                    <li><a href="viia.html">9I</a></li>
+                    <li><a href="viia.html">9J</a></li>
+                </ul>
+            </li>
+            <li><a href="iuran.html"><i class="fas fa-trash"></i>Iuran</a></li>
+            <li><a href="lapor.html"><i class="fa fa-clipboard"></i>Laporan</a></li>
+            <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
+        </ul>
+    </div>
+    <div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+    <!-- Main content -->
+    <div class="content p-4">
+        <div class="container">
+            <h2 class="mb-4"> Data Wali Kelas</h2>
+            <p>Klik No. HP untuk menghubungi Wali Kelas yang ingin anda hubungi!</p>
+            <div class="table-container">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>KELAS</th>
+                      <th>WALI KELAS</th>
+                      <th>NO. HP</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>7A</td>
+                      <td>NOVA ERFAN TRIYONO, S.Pd</td>
+                      <td><a href="https://wa.me/082147389190" target="_blank">082147389190</a></td>
+                    </tr>
+                    <tr>
+                      <td>7B</td>
+                      <td>HADI PRAYITNO, S.Pd</td>
+                      <td><a href="https://wa.me/082228169282" target="_blank">082228169282</a></td>
+                    </tr>
+                    <tr>
+                      <td>7C</td>
+                      <td>SUGIANTO EFENDI, S.Pd</td>
+                      <td><a href="https://wa.me/085257703037" target="_blank">085257703037</a></td>
+                    </tr>
+                    <tr>
+                      <td>7D</td>
+                      <td>MOHAMMAD AFTHONIL ABRORI, S.Pd</td>
+                      <td><a href="https://wa.me/085236003644" target="_blank">085236003644</a></td>
+                    </tr>
+                    <tr>
+                      <td>7E</td>
+                      <td>FITRIYATUL HASANAH, S.Pd</td>
+                      <td><a href="https://wa.me/081515476669" target="_blank">081515476669</a></td>
+                    </tr>
+                    <tr>
+                      <td>7F</td>
+                      <td>SUSILOWATI, S.Pd.I</td>
+                      <td><a href="https://wa.me/085231007401" target="_blank">085231007401</a></td>
+                    </tr>
+                    <tr>
+                      <td>7G</td>
+                      <td>RAFIF ANIS MAUDINA, S.Pd</td>
+                      <td><a href="https://wa.me/082330101085" target="_blank">082330101085</a></td>
+                    </tr>
+                    <tr>
+                      <td>7H</td>
+                      <td>FAIQOH HASANAH, S.Pd</td>
+                      <td><a href="https://wa.me/081330789178" target="_blank">081330789178</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              
+                <!-- Group 2: 8A to 8H -->
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>KELAS</th>
+                      <th>WALI KELAS</th>
+                      <th>NO. HP</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>8A</td>
+                      <td>SHOLEH, S.Pd.I</td>
+                      <td><a href="https://wa.me/085258739090" target="_blank">085258739090</a></td>
+                    </tr>
+                    <tr>
+                      <td>8B</td>
+                      <td>IRFAN NANANG SHOLIHIN, S.Pd</td>
+                      <td><a href="https://wa.me/085258841262" target="_blank">085258841262</a></td>
+                    </tr>
+                    <tr>
+                      <td>8C</td>
+                      <td>FIRMAN HIDAYATULLAH, S.Pd</td>
+                      <td><a href="https://wa.me/082332756928" target="_blank">082332756928</a></td>
+                    </tr>
+                    <tr>
+                      <td>8D</td>
+                      <td>EGILANA TRI SAPUTRA, S.Pd</td>
+                      <td><a href="https://wa.me/085258890038" target="_blank">085258890038</a></td>
+                    </tr>
+                    <tr>
+                      <td>8E</td>
+                      <td>ALVI SA'BANIA</td>
+                      <td><a href="https://wa.me/085216214901" target="_blank">085216214901</a></td>
+                    </tr>
+                    <tr>
+                      <td>8F</td>
+                      <td>SITTI MARDIYAH, S.E</td>
+                      <td><a href="https://wa.me/085330193611" target="_blank">085330193611</a></td>
+                    </tr>
+                    <tr>
+                      <td>8G</td>
+                      <td>SITI NUR AFIYAH, S.Pd</td>
+                      <td><a href="https://wa.me/082336812953" target="_blank">082336812953</a></td>
+                    </tr>
+                    <tr>
+                      <td>8H</td>
+                      <td>DESI ALFIATUS SYARIFAH, S.Ak</td>
+                      <td><a href="https://wa.me/082333839341" target="_blank">082333839341</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              
+                <!-- Group 3: 9A to 9J -->
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>KELAS</th>
+                      <th>WALI KELAS</th>
+                      <th>NO. HP</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>9A</td>
+                      <td>AGUS JUNAIDI, S.Pd</td>
+                      <td><a href="https://wa.me/085258289807" target="_blank">085258289807</a></td>
+                    </tr>
+                    <tr>
+                      <td>9B</td>
+                      <td>AHMAD FAWAID HABIBULLAH, S.Pd</td>
+                      <td><a href="https://wa.me/081231936644" target="_blank">081231936644</a></td>
+                    </tr>
+                    <tr>
+                      <td>9C</td>
+                      <td>MISBAH, S.Pd</td>
+                      <td><a href="https://wa.me/082337162424" target="_blank">082337162424</a></td>
+                    </tr>
+                    <tr>
+                      <td>9D</td>
+                      <td>ABDUL WAFI, S.Pd</td>
+                      <td><a href="https://wa.me/08155049554" target="_blank">08155049554</a></td>
+                    </tr>
+                    <tr>
+                      <td>9E</td>
+                      <td>BUHARI, S.Pd.I</td>
+                      <td><a href="https://wa.me/087722214357" target="_blank">087722214357</a></td>
+                    </tr>
+                    <tr>
+                      <td>9F</td>
+                      <td>KAMARIL ALDIYANI, S.E</td>
+                      <td><a href="https://wa.me/082313252584" target="_blank">082313252584</a></td>
+                    </tr>
+                    <tr>
+                      <td>9G</td>
+                      <td>HOIFATUL MAULA, S.Sy</td>
+                      <td><a href="https://wa.me/085257090889" target="_blank">085257090889</a></td>
+                    </tr>
+                    <tr>
+                      <td>9H</td>
+                      <td>SUSIANA, S.Pd</td>
+                      <td><a href="https://wa.me/082234950953" target="_blank">082234950953</a></td>
+                    </tr>
+                    <tr>
+                      <td>9I</td>
+                      <td>INAYATUL KARIMAH, S.Pd</td>
+                      <td><a href="https://wa.me/085601818246" target="_blank">085601818246</a></td>
+                    </tr>
+                    <tr>
+                      <td>9J</td>
+                      <td>CHUSNUL CHOTIMAH, S.Pd</td>
+                      <td><a href="https://wa.me/085232734205" target="_blank">085232734205</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+    // Sidebar toggle functionality
+    document.querySelector('.menu-icon').addEventListener('click', function() {
+        document.querySelector('.sidebar').classList.toggle('hide');
+        document.querySelector('.content').classList.toggle('hide');
+    });
+
+    // Submenu toggle functionality
+    document.querySelector('.toggle-submenu').addEventListener('click', function(e) {
+        e.preventDefault();
+        var submenu = this.nextElementSibling;
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    });
+</script>
+</body>
+</html>

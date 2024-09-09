@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9G</title>
+    <!-- Bootstrap CSS for styling -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">    
+</head>
+<body>
+    <style>
+        /* Sidebar styling */
+        .sidebar {
+            min-width: 70px;
+            max-width: 220px;
+            background-color: #343a40;
+            color: #fff;
+            transition: all 0.3s;
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+        }
+    
+        .sidebar h3 {
+            font-size: 1.2rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin: 15px;
+            text-align: center;
+        }
+    
+        .sidebar ul {
+            padding: 0;
+            list-style: none;
+            margin: 0;
+        }
+    
+        .sidebar ul li {
+            padding: 10px 15px;
+            margin: 5px 0;
+        }
+    
+        .sidebar ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+    
+        .sidebar ul li a:hover,
+        .sidebar ul li a.active {
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 4px;
+        }
+    
+        .sidebar ul li a i {
+            margin-right: 10px;
+        }
+    
+        .sidebar ul ul {
+            padding-left: 20px;
+        }
+    
+        .sidebar ul ul li {
+            padding: 5px 0;
+        }
+    
+        .sidebar ul ul li a {
+            font-size: 0.85rem;
+        }
+    
+        /* Menu icon styling */
+        .menu-icon {
+            font-size: 1.5rem;
+            color: #0281ff;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+    
+        .menu-icon:hover {
+            color: #faf60b;
+        }
+    
+        /* Hide sidebar and adjust content when sidebar is hidden */
+        .sidebar.hide {
+            margin-left: -220px;
+        }
+    
+        .content.hide {
+            margin-left: 0;
+        }
+    
+        @media (max-width: 50px) {
+            .sidebar {
+                margin-left: -220px; /* Sidebar hidden initially on smaller screens */
+            }
+    
+            .sidebar.active {
+                margin-left: 0;
+            }
+    
+            .content {
+                margin-left: 0;
+            }
+        }
+    
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-image: url('https://alutsmani.github.io/Pattern.jpg');
+            background-repeat: repeat;
+            background-attachment:scroll;
+            background-size: contain;
+        }
+    
+        .table-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1px;
+            margin: 20px;
+            margin-left: 240px; /* Adjust margin to make room for the sidebar */
+            padding: 20px;
+            transition: all 0.3s;
+        }
+    
+        tr:hover {
+            background-color: #ddd;
+        }
+    
+        .content h2 {
+          margin-bottom: 0; /* Remove margin-bottom from h2 */
+        }
+    
+        .content p {
+          margin-top: 0; /* Remove margin-top from p */
+        }
+    
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        th, td {
+            padding: 8px;
+        }
+    
+        th {
+            background-color: #f2f2f2;
+            text-align: center; /* Center-align header text horizontally */
+            vertical-align: middle; /* Center-align header text vertically */
+        }
+    
+        .table-container {
+            margin: 20px;
+        }
+    
+        .table-title {
+            text-align: center; /* Center-align the title horizontally */
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: #333;
+        }
+    
+        /* Align the Nama column to the left */
+        .align-left {
+            text-align: left;
+        }
+    
+        /* Center-align other columns */
+        td {
+            text-align: center;
+        }
+    
+        /* Center-align merged header cells */
+        .align-center {
+            text-align: center;
+            vertical-align: middle;
+        }
+    
+        /* Highlight cells in green if the value is 5 or more */
+        .highlight-green {
+            background-color: #d4edda; /* Light green background */
+        }
+    
+        .highlight-yellow {
+            background-color: #fff3cd; /* Light yellow background */
+        }
+    
+        /* Media query for smaller screens */
+        @media (max-width: 767px) {
+            table {
+                font-size: 0.8rem; /* Smaller font size for table data on mobile devices */
+            }
+    
+            th, td {
+                padding: 4px; /* Smaller padding for table data on mobile devices */
+            }
+    
+            .table-title {
+                font-size: 20px; /* Adjust title font size on smaller screens */
+            }
+        }
+                /* Prevent text wrapping in the Nama column */
+                .nama-column {
+            white-space: nowrap;
+        }
+        /* Styling tombol ikon */
+        .icon-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            color: rgb(2, 110, 252);
+            text-decoration: none;
+            font-size: 20px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        .icon-button:hover {
+            background-color: #007bff; /* Biru gelap */
+        }
+        .logo-icon {
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    margin-left: 10px; /* Space between icon and logo */
+    background-color: transparent; /* Ensure background is transparent */
+    border: none; /* Remove any border */
+        }
+    </style>
+<div class="menu-icon d-flex align-items-center">
+    <i class="fas fa-bars"></i> <!-- Menu icon for toggling sidebar -->
+    <img src="https://tse2.mm.bing.net/th?id=OIP.PEzGjWR5KT5_WBfoONYflwHaHZ&pid=Api&P=0&h=180" alt="Logo" class="logo-icon"> <!-- Logo next to the menu icon -->
+</div>
+<div class="d-flex">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3 class="text-center py-3"></h3>
+        <ul class="list-unstyled">
+            <li><a href="walikelas.html" class="">Wali Kelas</a></li>
+            <li>
+                <a href="#" class="toggle-submenu">Absen Kelas</a>
+                <ul class="list-unstyled pl-3 submenu" style="display: none;">
+                    <li><a href="viia.html">7A</a></li>
+                    <li><a href="viib.html">7B</a></li>
+                    <li><a href="viic.html">7C</a></li>
+                    <li><a href="viid.html">7D</a></li>
+                    <li><a href="viie.html">7E</a></li>
+                    <li><a href="viif.html">7F</a></li>
+                    <li><a href="viig.html">7G</a></li>
+                    <li><a href="viih.html">7H</a></li>
+                    <li><a href="viiia.html">8A</a></li>
+                    <li><a href="viiib.html">8B</a></li>
+                    <li><a href="viiic.html">8C</a></li>
+                    <li><a href="viiid.html">8D</a></li>
+                    <li><a href="viiie.html">8E</a></li>
+                    <li><a href="viiif.html">8F</a></li>
+                    <li><a href="viiig.html">8G</a></li>
+                    <li><a href="viiih.html">8H</a></li>
+                    <li><a href="viiii.html">8I</a></li>
+                    <li><a href="ixa.html">9A</a></li>
+                    <li><a href="ixb.html">9B</a></li>
+                    <li><a href="ixc.html">9C</a></li>
+                    <li><a href="ixd.html">9D</a></li>
+                    <li><a href="ixe.html">9E</a></li>
+                    <li><a href="ixf.html">9F</a></li>
+                    <li><a href="ixg.html">9G</a></li>
+                    <li><a href="ixh.html">9H</a></li>
+                    <li><a href="ixi.html">9I</a></li>
+                    <li><a href="ixj.html">9J</a></li>
+                </ul>
+            </li>
+            <li><a href="iuran.html"><i class="fas fa-trash"></i>Iuran</a></li>
+            <li><a href="lapor.html"><i class="fa fa-clipboard"></i>Laporan</a></li>
+            <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
+        </ul>
+    </div>
+    <div class="table-container">
+        <div class="table-title">ABSEN KELAS 9G</div>
+            <!-- Tombol ikon dengan tautan -->
+    <!-- Tombol ikon dengan sandi -->
+    <button class="icon-button" onclick="promptPassword()">
+        <i class="fa fa-edit"></i>
+    </button>
+        <table class="table table-striped table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th rowspan="2" class="align-center">No</th>
+                    <th rowspan="2" class="align-center">Nama</th>
+                    <th colspan="3" class="align-center">Ganjil</th>
+                    <th colspan="3" class="align-center">Genap</th>
+                    <th colspan="3" class="align-center">Jumlah</th>
+                    <th rowspan="2" class="align-center">Ket</th>
+                </tr>
+                <tr>
+                    <th class="align-center">A</th>
+                    <th class="align-center">S</th>
+                    <th class="align-center">I</th>
+                    <th class="align-center">A</th>
+                    <th class="align-center">S</th>
+                    <th class="align-center">I</th>
+                    <th class="align-center">A</th>
+                    <th class="align-center">S</th>
+                    <th class="align-center">I</th>
+                </tr>
+            </thead>
+            <tbody id="data-table-body">
+                <!-- Data will be inserted dynamically here -->
+            </tbody>
+        </table>
+    </div>
+<!-- jQuery and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+        // URL tujuan
+        const targetUrl = 'https://docs.google.com/spreadsheets/d/1-Op_g01a8yI_uhrYzGsKFYhq-cLONWos6xxOA1-dCkQ/edit?gid=2105679311#gid=2105679311';
+        // Sandi yang benar
+        const correctPassword = '1945';
+
+        function promptPassword() {
+            // Menampilkan prompt untuk meminta sandi
+            const password = prompt('Masukkan sandi untuk mengakses tautan:');
+
+            if (password === correctPassword) {
+                // Jika sandi benar, buka tautan di tab baru
+                window.open(targetUrl, '_blank');
+            } else {
+                // Jika sandi salah, tampilkan pesan kesalahan
+                alert('Sandi salah. Akses ditolak.');
+            }
+        }
+    // Sidebar toggle functionality
+    document.querySelector('.menu-icon').addEventListener('click', function() {
+        document.querySelector('.sidebar').classList.toggle('hide');
+    });
+
+    // Submenu toggle functionality
+    document.querySelector('.toggle-submenu').addEventListener('click', function(e) {
+        e.preventDefault();
+        var submenu = this.nextElementSibling;
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    });
+    
+        // Function to round numbers to the nearest whole number
+        function roundNumber(num) {
+            return num !== undefined && num !== null ? Math.round(num) : '';
+        }
+    // Function to determine the "Ket" value and its background color
+    function getKet(aj) {
+        if (aj >= 21) {
+            return { text: 'Terindikasi', class: 'highlight-red' };
+        } else if (aj >= 10) {
+            return { text: 'Pemanggilan', class: 'highlight-yellow' };
+        } else if (aj >= 5) {
+            return { text: 'Peringatan', class: 'highlight-green' };
+        } else {
+            return { text: '', class: '' };
+        }
+    }
+
+        // Fetch data from the Google Apps Script exec URL
+        fetch('https://script.google.com/macros/s/AKfycbyjJiwa90gujUvAC7ydx5rfTFkGNt0tFQoOV0Vi5zecT-RyQqAWa6AHC7bNdyDu4T0I/exec')
+        .then(response => response.json())
+        .then(data => {
+            let tableBody = document.getElementById('data-table-body');
+            tableBody.innerHTML = ''; // Clear existing data
+
+            data.forEach(item => {
+                let aj = roundNumber(item["Jumlah - Aj"]);
+                let ketInfo = getKet(aj);
+                let row = `<tr>
+                    <td class="align-center">${item.No || ''}</td>
+                    <td class="align-left nama-column">${item.Nama || ''}</td>
+                    <td>${roundNumber(item["Ganjil - Aga"]) || ''}</td>
+                    <td>${roundNumber(item["Ganjil - Sga"]) || ''}</td>
+                    <td>${roundNumber(item["Ganjil - Iga"]) || ''}</td>
+                    <td>${roundNumber(item["Genap - Age"]) || ''}</td>
+                    <td>${roundNumber(item["Genap - Sge"]) || ''}</td>
+                    <td>${roundNumber(item["Genap - Ige"]) || ''}</td>
+                    <td>${roundNumber(item["Jumlah - Aj"]) || ''}</td>
+                    <td>${roundNumber(item["Jumlah - Sj"]) || ''}</td>
+                    <td>${roundNumber(item["Jumlah - Ij"]) || ''}</td>
+                    <td class="${ketInfo.class}">${ketInfo.text}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+</script>
+</body>
+</html>

@@ -19,74 +19,7 @@
     <!-- Tag meta untuk gambar ketika dibagikan di media sosial -->
     <meta property="og:image" content="https://tse2.mm.bing.net/th?id=OIP.PEzGjWR5KT5_WBfoONYflwHaHZ&pid=Api&P=0&h=180" />
     <style>
-/* Cool infinite background scrolling animation.
- * Twitter: @kootoopas
- */
-/* Exo thin font from Google. */
-@import url('https://fonts.googleapis.com/css?family=Exo:100');
-/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
-/* Animations */
-@-webkit-keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
-}
-@-moz-keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
-}
-@-o-keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
-}
-@keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
-}
-@-webkit-keyframes bg-scrolling {
-  0% {
-    background-position: 50px 50px;
-  }
-}
-@-moz-keyframes bg-scrolling {
-  0% {
-    background-position: 50px 50px;
-  }
-}
-@-o-keyframes bg-scrolling {
-  0% {
-    background-position: 50px 50px;
-  }
-}
-@keyframes bg-scrolling {
-  0% {
-    background-position: 50px 50px;
-  }
-}
-/* Main styles */
-body {
-  margin-top: 6rem;
-  color: #999;
-  font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
-  text-align: center;
-  /* img size is 50x50 */
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
-  -webkit-animation: bg-scrolling-reverse 0.92s infinite;
-  /* Safari 4+ */
-  -moz-animation: bg-scrolling-reverse 0.92s infinite;
-  /* Fx 5+ */
-  -o-animation: bg-scrolling-reverse 0.92s infinite;
-  /* Opera 12+ */
-  animation: bg-scrolling-reverse 0.92s infinite;
-  /* IE 10+ */
-  -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-  -o-animation-timing-function: linear;
-  animation-timing-function: linear;
-}
+        *,
 
 html {
     padding: 0;
@@ -100,11 +33,10 @@ body {
   font-family: Arial, sans-serif; /* Pilihan font global, sesuaikan sesuai kebutuhan */
 }
 
-p, h1, h2, h3, h4, h5, h6, div, span, td, th {
+p, h1, h2, h3, h4, h5, h6, span, td, th {
   opacity: 1; /* Pastikan teks dalam elemen-elemen ini tidak transparan */
   color: black; /* Atur warna teks menjadi hitam */
 }
-
 body {
     background-color: #dff1fc;
     font-family: "Segoe UI", sans-serif;
@@ -180,12 +112,12 @@ body {
         }
 
         main {
-            padding-top: 1rem;
+            padding-top: 7rem;
             margin: 1rem;
         
         }
 
-        @media only screen and (min-width: 500px) {
+        @media only screen and (min-width: 2000px) {
             nav ul {
                 display: flex;
                 position: static;
@@ -214,7 +146,7 @@ body {
             flex-direction: column;
             align-items: center; /* Center horizontally */
             text-align: center; /* Center text within the container */
-            margin-top: 0px; /* Space above the container */
+            margin-top: 20px; /* Space above the container */
         }
         .centered-content img {
             max-width: 50px; /* Control the size of the logo */
@@ -223,7 +155,7 @@ body {
         .centered-content h1 {
             font-size: 17px;
             font-weight: bold;
-            margin: 0px 0; /* Space above and below each title */
+            margin: 5px 0; /* Space above and below each title */
         }
         .print-btn {
             cursor: pointer;
@@ -238,7 +170,72 @@ body {
         .print-btn i {
             font-size: 16px; /* Adjust size as needed */
         }
-        .dataTable {
+        /* Cool infinite background scrolling animation.
+ * Twitter: @kootoopas
+ */
+/* Exo thin font from Google. */
+@import url('https://fonts.googleapis.com/css?family=Exo:100');
+/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+/* Animations */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+/* Main styles */
+body {
+  margin-top: 6rem;
+  /* img size is 50x50 */
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  -webkit-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Opera 12+ */
+  animation: bg-scrolling-reverse 0.92s infinite;
+  /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+.dataTable {
   background-color: rgb(255, 255, 255); /* Atur warna background tabel */
   opacity: 1; /* Pastikan opacity tidak transparan */
   border-collapse: collapse; /* Opsional, untuk merapikan tampilan border */
@@ -253,7 +250,6 @@ body {
   font-size: 12px; /* Atur ukuran teks, sesuaikan sesuai kebutuhan */
   font-family: Arial, sans-serif; /* Opsional, sesuaikan dengan font yang diinginkan */
 }
-
     </style>
 </head>
 <body>

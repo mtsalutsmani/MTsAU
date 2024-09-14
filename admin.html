@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beranda</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+*,
+
+html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: "Segoe UI", sans-serif;
+}
+        nav {
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            align-items: center;
+        }
+
+        nav .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .logo-container img {
+            width: 40px;
+            margin-right: 0.5rem;
+        }
+
+        nav .logo-container .title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #191919;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 0rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            transition: transform 300ms ease;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid #dae40f;
+            box-shadow: 0px 4px 6px rgba(252, 248, 26, 0.1);
+            transform: translateX(100%);
+        }
+
+        nav ul.visible {
+            transform: translateX(0);
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #191919;
+            font-weight: 600;
+            padding: 1px 1rem;
+            display: block;
+            transition: color 300ms, background-color 300ms;
+        }
+
+        nav ul li a:hover {
+            color: orangered;
+            background-color: #f0f0f0;
+        }
+
+        .menu-icon {
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        main {
+            padding-top: 6rem;
+            margin: 1rem;
+        
+        }
+
+        @media only screen and (min-width: 500px) {
+            nav ul {
+                display: flex;
+                position: static;
+                background-color: transparent;
+                box-shadow: none;
+                transform: none;
+                transition: none;
+            }
+
+            nav ul.visible {
+                display: flex;
+                transform: none;
+            }
+
+            .menu-icon {
+                display: none;
+            }
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            table-layout: auto; /* Membuat tabel tetap rapi di perangkat mobile */
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        /* Mengatur perataan kolom */
+        td:nth-child(1) {
+            text-align: center; /* Kolom TAHUN center */
+        }
+        td:nth-child(2), td:nth-child(3) {
+            text-align: left; /* Kolom RINCIAN dan JUMLAH left */
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .whatsapp {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .whatsapp a {
+            color: #25D366;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .whatsapp a .fa-whatsapp {
+            margin-right: 8px;
+        }
+        .copyright {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+        h1 {
+            text-align: center;
+            font-size:x-large;
+            padding-top: 5rem;
+            margin-bottom: 20px;
+        }
+        /* Membuat tabel lebih responsif di layar kecil */
+        @media screen and (max-width: 600px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            thead tr {
+                display: none;
+            }
+            tr {
+                margin-bottom: 10px;
+            }
+            td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                text-align: left;
+                font-weight: bold;
+            }
+        }
+    </style>
+    </head>
+    <body>
+        <nav>
+            <div class="logo-container">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.PEzGjWR5KT5_WBfoONYflwHaHZ&pid=Api&P=0&h=180" alt="my-avatar" />
+                <span class="title">MTs. AL-UTSMANI</span>
+            </div>
+            <div id="menu-icon" class="menu-icon">
+                <i class="ph-fill ph-list"></i>
+            </div>
+            <ul id="menu-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pembayaran.html">Pembayaran</a></li>
+                <li><a href="kwitansi.html">Kwitansi</a></li>
+                <li><a href="walikelas.html">Wali Kelas</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+        
+    <h1>LAPORAN</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>TAHUN</th>
+                <th>RINCIAN</th>
+                <th>JUMLAH</th>
+            </tr>
+        </thead>
+        <tbody id="data-table-body">
+            <!-- Data dari Google Sheets akan ditampilkan di sini -->
+        </tbody>
+    </table>
+
+    <div class="whatsapp">
+        <p>Hubungi Admin di WhatsApp: 
+            <a href="https://wa.me/6281234777850" target="_blank">
+                <i class="fab fa-whatsapp"></i> 081234777850
+            </a>
+        </p>
+    </div>
+
+    <footer class="copyright">
+        &copy; 2024 Semua hak dilindungi.
+    </footer>
+
+    <script>
+        const menuIcon = document.getElementById("menu-icon");
+        const menuList = document.getElementById("menu-list");
+
+        menuIcon.addEventListener("click", () => {
+            menuList.classList.toggle("visible");
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            // URL untuk mengambil data dari Google Apps Script
+            const url = 'https://script.google.com/macros/s/AKfycbygNh0MiXe6flbDe3hdtSDFVIstqt8zN99EUDKlAdyzf7wVVePdCj2rr3zvR9uSpY5iNw/exec';
+
+            // Fungsi untuk memformat angka menjadi mata uang tanpa desimal
+            const formatCurrency = (number) => {
+                return new Intl.NumberFormat('id-ID', {
+                    style: 'currency',
+                    currency: 'IDR',
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                }).format(number);
+            };
+
+            // Fungsi untuk mengambil data dari Google Sheets
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    let tableBody = document.getElementById('data-table-body');
+
+                    // Memproses data yang diterima
+                    data.forEach(row => {
+                        let tr = document.createElement('tr');
+                        let tahunTd = document.createElement('td');
+                        let rincianTd = document.createElement('td');
+                        let jumlahTd = document.createElement('td');
+
+                        tahunTd.textContent = row.TAHUN;
+                        rincianTd.textContent = row.RINCIAN;
+                        jumlahTd.textContent = formatCurrency(row.JUMLAH); // Format kolom JUMLAH sebagai mata uang
+
+                        // Menambahkan atribut data-label untuk tampilan mobile
+                        tahunTd.setAttribute('data-label', 'TAHUN');
+                        rincianTd.setAttribute('data-label', 'RINCIAN');
+                        jumlahTd.setAttribute('data-label', 'JUMLAH');
+
+                        tr.appendChild(tahunTd);
+                        tr.appendChild(rincianTd);
+                        tr.appendChild(jumlahTd);
+
+                        tableBody.appendChild(tr);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        });
+    </script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

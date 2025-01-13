@@ -937,7 +937,7 @@ function onReload() {
 function deleteRow(id) {
     const password = prompt("Masukkan sandi untuk menghapus data:");
 
-    if (password === "170899") {
+    if (password === "mts170899") {
         $.ajax({
     url: 'https://script.google.com/macros/s/AKfycbwk6rBZ-rXkqtJTJe3bk6XNtPHTBqw5BPccTAJb7-0CWFz8ntRc0WPhUNfDDk6xetdfbA/exec',
     type: 'GET',
@@ -969,7 +969,7 @@ function deleteRow(id) {
 function editRow(id) {
     const password = prompt("Masukkan sandi untuk mengedit data:");
 
-    if (password === "1708") { // Ganti "1708" dengan sandi yang sebenarnya
+    if (password === "mts1999") { // Ganti "1708" dengan sandi yang sebenarnya
         var table = $("#dataTable").DataTable();
         var rowData = table.rows().data().filter(function(row) {
             return row.ID == id;

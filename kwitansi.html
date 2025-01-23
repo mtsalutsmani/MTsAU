@@ -734,7 +734,7 @@ printWindow.document.write(`
 }
 
 <!-- CSS for Print -->
-
+.hidden {display: none;}
   @media print {
     body * {
       visibility: hidden; /* Hide everything outside the modal */
@@ -792,8 +792,8 @@ printWindow.document.write(`
                                                 <tr><th>Keterangan Mutasi</th><td>${data.Ket_Mutasi}</td></tr>
                                                 <tr><th>Pernah Tidak Naik Kelas</th><td>${data.Pernah_Tidak_Naik}</td></tr>
                                                 <tr><th>Dapat PIP</th><td>${data.Dapat_PIP}</td></tr>
-                                                <tr><th>Saldo</th><td>${data.Saldo_PIP}</td></tr>
-                                                <tr><th>Sisa</th><td>${data.Sisa_PIP}</td></tr>
+                                                
+                                                <tr><th class="hidden">Sisa</th><td class="hidden">${data.Sisa_PIP}</td></tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -803,6 +803,7 @@ printWindow.document.write(`
                                             <tbody>
                                                 <tr><th>Total Tanggungan</th><td>${data.Total}</td></tr>
                                                 <tr><th>Pemotongan</th><td>${data.Pemotongan}</td></tr>
+                                                <tr><th>Uang PIP</th><td>${data.Saldo_PIP}</td></tr>
                                                 <tr><th>Total Bayar</th><td>${data.Dibayar}</td></tr>
                                                 <tr><th>Sisa</th><td>${data.Sisa}</td></tr>
                                                 <tr><th>Lunas/Belum</th><td>${data.Lunas}</td></tr>

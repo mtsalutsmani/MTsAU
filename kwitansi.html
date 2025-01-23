@@ -734,7 +734,9 @@ printWindow.document.write(`
 }
 
 <!-- CSS for Print -->
-.hidden {display: none;}
+.hidden {
+    display: none;
+}
   @media print {
     body * {
       visibility: hidden; /* Hide everything outside the modal */
@@ -792,7 +794,6 @@ printWindow.document.write(`
                                                 <tr><th>Keterangan Mutasi</th><td>${data.Ket_Mutasi}</td></tr>
                                                 <tr><th>Pernah Tidak Naik Kelas</th><td>${data.Pernah_Tidak_Naik}</td></tr>
                                                 <tr><th>Dapat PIP</th><td>${data.Dapat_PIP}</td></tr>
-                                                
                                                 <tr><th class="hidden">Sisa</th><td class="hidden">${data.Sisa_PIP}</td></tr>
                                             </tbody>
                                         </table>

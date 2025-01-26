@@ -173,7 +173,202 @@ main {
 .d-flex-custom > * {
   margin-right: 1px; /* Space between elements */
 }
+.title-header {
+        font-family: 'Roboto', sans-serif; /* Example of a modern font */
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333; /* Adjust color as needed */
+    }
+/* Cool infinite background scrolling animation.
+ * Twitter: @kootoopas
+ */
+/* Exo thin font from Google. */
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+/* Animations */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+/* Main styles */
+body {
+  margin-top: 6rem;
+  color: #999;
+  font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
+  text-align: left;
+  /* img size is 50x50 */
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  -webkit-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Opera 12+ */
+  animation: bg-scrolling-reverse 0.92s infinite;
+  /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+.dataTable {
+  background-color: rgb(255, 255, 255); /* Atur warna background tabel */
+  opacity: 1; /* Pastikan opacity tidak transparan */
+  border-collapse: collapse; /* Opsional, untuk merapikan tampilan border */
+  width: 100%; /* Sesuaikan dengan lebar yang diinginkan */
+}
 
+.dataTable th, .dataTable td {
+  text-align: left; /* Atur perataan teks */
+  color: black; /* Atur warna teks menjadi hitam */
+  font-size: 17px; /* Atur ukuran teks, sesuaikan sesuai kebutuhan */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif; /* Opsional, sesuaikan dengan font yang diinginkan */
+}
+p, h1, h2, h3, h4, h5, h6, div, span, td, th {
+  opacity: 1; /* Pastikan teks dalam elemen-elemen ini tidak transparan */
+  color: black; /* Atur warna teks menjadi hitam */
+}
+        .cool-box {
+            background: linear-gradient(320deg, #000000, #0502b4);
+            border: 2px solid #ffffff;
+            border-radius: 10px; /* Sudut sudut kotak */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Bayangan */
+            padding: 20px; /* Ukuran padding yang benar */
+            width: 80%; /* Lebar kotak */
+            max-width: 300px;
+            margin: auto; /* Pusatkan kotak secara horizontal */
+            flex-direction: column;
+            align-items: center;
+            position:static;
+            overflow: hidden;
+            transition: max-height 1s ease-out, top 0.8s ease-in-out;
+        }
+
+
+        .cool-box input {
+            font-weight: bold;
+            font-size:medium;
+        }
+
+
+        .Heading3 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color:#0502b4;
+        }
+
+        .Biodata{
+            background-color: #ffffff;
+            align-items: center;
+            margin: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            max-width: 400px;
+            
+            transition: opacity 0.5s;
+        }
+
+        
+
+        .visible {
+            display: block;
+            opacity: 1;
+        }
+
+        .hidden {
+            display: none !important;
+            opacity: 0;
+        }
+
+
+        .TTL{
+            background-color: #dadada00;
+            display:inline-flex;
+            justify-content:space-between; /* Untuk memberikan jarak antara elemen-elemen di dalam .ttl */
+        }
+
+        .TTL label{
+            width: 100px;
+        }
+        /* HTML: <div class="loader"></div> */
+        #loader {
+            width: 100%;
+            height: 20px;
+            background: 
+                linear-gradient(#07971a 0 0) left -40px top 0/40px 20px,
+                linear-gradient(#ddd 0 0) center/100% 50%; 
+            background-repeat: no-repeat;
+            animation: l5 1s infinite linear;
+            }
+            @keyframes l5 {
+            100% {background-position: right -40px top 0,center}
+        }
+
+        /* Gaya mode terang untuk semua dropdown */
+        select::-webkit-calendar-picker-indicator {
+            color: #0a0a0a; /* Warna teks pada mode gelap */
+            background-color: #f7f7f7; /* Warna latar belakang pada mode gelap */
+        }
+
+        /* Gaya mode gelap untuk semua dropdown */
+        @media (prefers-color-scheme: dark) {
+            select::-webkit-calendar-picker-indicator {
+                color: #fff; /* Warna teks pada mode gelap */
+                background-color: #242424; /* Warna latar belakang pada mode gelap */
+            }
+        }
+
+        #Judul{
+            font-weight: bold;
+        }
+
+        #example {
+            background-color: white; /* Memberikan latar belakang putih pada tabel */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan pada tabel */
+            
+        }
 </style>
 </head>
 <body>
@@ -436,7 +631,7 @@ main {
                         <option value="Mutasi7">Mutasi7</option>
                         <option value="Mutasi8">Mutasi8</option>
                         <option value="Mutasi9">Mutasi9</option>
-            <option value="Beasiswa">Beasiswa</option>
+			<option value="Beasiswa">Beasiswa</option>
                     </select>
                 </div>
                 <div class="col-md-3">
@@ -474,353 +669,16 @@ main {
 
 <!-- Modal Footer -->
 <div class="modal-footer">
-<button type="button" id="submitBtn" class="btn btn-primary" onclick="addForm()">Save</button>
+<button type="button" id="submitBtn" class="btn btn-primary" onclick="updateForm()">Save</button>
 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 </div>
 </div>
 </div>
 </div>
-<!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-<script>
-            const menuIcon = document.getElementById("menu-icon");
-        const menuList = document.getElementById("menu-list");
-
-        menuIcon.addEventListener("click", () => {
-            menuList.classList.toggle("visible");
-        });
-async function updateForm() {
-    try {
-        // Get the form element
-        const form = document.getElementById('myForm');
-        if (!form) throw new Error('Form element not found');
-
-        // Create FormData object from the form
-        const formData = new FormData(form);
-
-        // Log FormData key-value pairs
-        formData.forEach((value, key) => {
-            console.log(`${key}: ${value}`);
-        });
-
-        // Append additional parameters if needed
-        formData.append('action', 'Update');
-        formData.append('sh', 'Data');
-
-        // Disable the submit button to prevent multiple submissions
-        const submitButton = document.getElementById('submitBtn');
-        if (!submitButton) throw new Error('Submit button not found');
-        submitButton.disabled = true;
-
-        // Show loading indicator
-        const loadingIndicator = document.getElementById('loadingIndicator');
-        if (loadingIndicator) loadingIndicator.style.display = 'block';
-
-        // Send the POST request
-        const response = await fetch('https://script.google.com/macros/s/AKfycbw2NB4gmeie3kVcfBlgINLKGXzQwV9G4-tO2OXiQiOYc-56FGIFi-5XznzyORHry48Xww/exec', {
-    method: 'POST',
-    body: formData
-    });
-
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const result = await response.text();
-        console.log("Server Response:", result);
-
-        alert("Data updated successfully!");
-        $('#myModal').modal('hide');
-
-        // Refresh the DataTable
-        const table = $('#dataTable').DataTable();
-        table.ajax.reload();
-
-    } catch (error) {
-        console.error('Update Error:', error);
-        alert("Error updating data. Please check the console for details.");
-    } finally {
-        // Re-enable the submit button
-        const submitButton = document.getElementById('submitBtn');
-        if (submitButton) {
-            submitButton.disabled = false;
-        }
-
-        // Hide the loading indicator
-        const loadingIndicator = document.getElementById('loadingIndicator');
-        if (loadingIndicator) {
-            loadingIndicator.style.display = 'none';
-        }
-    }
-}
-  async function addForm() {
-    // Ambil data dari modal
-    const id = document.getElementById("ID").value.trim();
-    const nama = document.getElementById("Nama").value.trim();
-    const kelas = document.getElementById("Kelas").value.trim();
-    
-    // Ambil semua input lainnya di modal
-    const inputs = document.querySelectorAll('.form-control'); // Sesuaikan class input
-
-    let newData = { ID: id, Nama: nama, Kelas: kelas };
-
-    // Loop semua input dan hanya ambil yang ada nilainya
-    inputs.forEach((input) => {
-      const key = input.getAttribute("name"); // Ambil atribut `name` untuk menentukan kolom
-      const value = input.value.trim();
-      if (value && key !== "id" && key !== "nama" && key !== "kelas") {
-        newData[key] = value; // Tambahkan hanya jika ada input
-      }
-    });
-
-    // Kirim data ke Google Apps Script
-    try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbyt8EEm2UbmmCkd69G8Txce1fgZGCsXzqZCR3nnxEV3txSfjzsqXLsPd_TDD0xyLEpH/exec", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ action: "addForm", data: newData }),
-      });
-
-      const result = await response.json();
-      if (result.success) {
-        alert("Data berhasil ditambahkan ke histori!");
-      } else {
-        alert("Gagal menambahkan data: " + result.message);
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("Terjadi kesalahan saat mengirim data.");
-    }
-  }
-document.addEventListener('DOMContentLoaded', () => {
-    const submitButton = document.getElementById('submitBtn'); // Ganti dengan ID tombol Submit
-    if (submitButton) {
-        submitButton.addEventListener('click', addForm);
-    }
-});
-
-
-
-    function printReceipt() {
-        // Add your receipt printing logic here
-        console.log("Kwitansi button clicked");
-    }
-</script>
-
-<style>
-    .title-header {
-        font-family: 'Roboto', sans-serif; /* Example of a modern font */
-        font-size: 18px;
-        font-weight: bold;
-        text-align: center;
-        margin-bottom: 20px;
-        color: #333; /* Adjust color as needed */
-    }
-/* Cool infinite background scrolling animation.
- * Twitter: @kootoopas
- */
-/* Exo thin font from Google. */
-@import url(https://fonts.googleapis.com/css?family=Exo:100);
-/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
-/* Animations */
-@-webkit-keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
-}
-@-moz-keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
-}
-@-o-keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
-}
-@keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
-}
-@-webkit-keyframes bg-scrolling {
-  0% {
-    background-position: 50px 50px;
-  }
-}
-@-moz-keyframes bg-scrolling {
-  0% {
-    background-position: 50px 50px;
-  }
-}
-@-o-keyframes bg-scrolling {
-  0% {
-    background-position: 50px 50px;
-  }
-}
-@keyframes bg-scrolling {
-  0% {
-    background-position: 50px 50px;
-  }
-}
-/* Main styles */
-body {
-  margin-top: 6rem;
-  color: #999;
-  font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
-  text-align: left;
-  /* img size is 50x50 */
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
-  -webkit-animation: bg-scrolling-reverse 0.92s infinite;
-  /* Safari 4+ */
-  -moz-animation: bg-scrolling-reverse 0.92s infinite;
-  /* Fx 5+ */
-  -o-animation: bg-scrolling-reverse 0.92s infinite;
-  /* Opera 12+ */
-  animation: bg-scrolling-reverse 0.92s infinite;
-  /* IE 10+ */
-  -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-  -o-animation-timing-function: linear;
-  animation-timing-function: linear;
-}
-.dataTable {
-  background-color: rgb(255, 255, 255); /* Atur warna background tabel */
-  opacity: 1; /* Pastikan opacity tidak transparan */
-  border-collapse: collapse; /* Opsional, untuk merapikan tampilan border */
-  width: 100%; /* Sesuaikan dengan lebar yang diinginkan */
-}
-
-.dataTable th, .dataTable td {
-  text-align: left; /* Atur perataan teks */
-  color: black; /* Atur warna teks menjadi hitam */
-  font-size: 17px; /* Atur ukuran teks, sesuaikan sesuai kebutuhan */
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif; /* Opsional, sesuaikan dengan font yang diinginkan */
-}
-p, h1, h2, h3, h4, h5, h6, div, span, td, th {
-  opacity: 1; /* Pastikan teks dalam elemen-elemen ini tidak transparan */
-  color: black; /* Atur warna teks menjadi hitam */
-}
-        .cool-box {
-            background: linear-gradient(320deg, #000000, #0502b4);
-            border: 2px solid #ffffff;
-            border-radius: 10px; /* Sudut sudut kotak */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Bayangan */
-            padding: 20px; /* Ukuran padding yang benar */
-            width: 80%; /* Lebar kotak */
-            max-width: 300px;
-            margin: auto; /* Pusatkan kotak secara horizontal */
-            flex-direction: column;
-            align-items: center;
-            position:static;
-            overflow: hidden;
-            transition: max-height 1s ease-out, top 0.8s ease-in-out;
-        }
-
-
-        .cool-box input {
-            font-weight: bold;
-            font-size:medium;
-        }
-
-
-        .Heading3 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            color:#0502b4;
-        }
-
-        .Biodata{
-            background-color: #ffffff;
-            align-items: center;
-            margin: auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 15px;
-            margin-top: 15px;
-            max-width: 400px;
-            
-            transition: opacity 0.5s;
-        }
-
-        
-
-        .visible {
-            display: block;
-            opacity: 1;
-        }
-
-        .hidden {
-            display: none !important;
-            opacity: 0;
-        }
-
-
-        .TTL{
-            background-color: #dadada00;
-            display:inline-flex;
-            justify-content:space-between; /* Untuk memberikan jarak antara elemen-elemen di dalam .ttl */
-        }
-
-        .TTL label{
-            width: 100px;
-        }
-
-        
-
-
-
-        /* HTML: <div class="loader"></div> */
-        #loader {
-            width: 100%;
-            height: 20px;
-            background: 
-                linear-gradient(#07971a 0 0) left -40px top 0/40px 20px,
-                linear-gradient(#ddd 0 0) center/100% 50%; 
-            background-repeat: no-repeat;
-            animation: l5 1s infinite linear;
-            }
-            @keyframes l5 {
-            100% {background-position: right -40px top 0,center}
-        }
-
-        /* Gaya mode terang untuk semua dropdown */
-        select::-webkit-calendar-picker-indicator {
-            color: #0a0a0a; /* Warna teks pada mode gelap */
-            background-color: #f7f7f7; /* Warna latar belakang pada mode gelap */
-        }
-
-        /* Gaya mode gelap untuk semua dropdown */
-        @media (prefers-color-scheme: dark) {
-            select::-webkit-calendar-picker-indicator {
-                color: #fff; /* Warna teks pada mode gelap */
-                background-color: #242424; /* Warna latar belakang pada mode gelap */
-            }
-        }
-
-        #Judul{
-            font-weight: bold;
-        }
-
-        #example {
-            background-color: white; /* Memberikan latar belakang putih pada tabel */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan pada tabel */
-            
-        }
-
-    
-    </style>
-    
-    <!-- DataTable  -->
+ 	<!-- DataTable  -->
      <div class="container-fluid">
-        <?!= include('DataTable'); ?> <!-- See DataTable.html File -->
-    </div>
+		<?!= include('DataTable'); ?> <!-- See DataTable.html File -->
+	</div>
     <script src = "https://code.jquery.com/jquery-3.5.1.js" ></script>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/js/bootstrap.bundle.min.js" > </script> 
     <script src = "https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js" > </script> 
@@ -831,9 +689,12 @@ p, h1, h2, h3, h4, h5, h6, div, span, td, th {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/file-saver/dist/FileSaver.min.js"></script>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
 function onReload() {
-    var baseUrl = "https://script.google.com/macros/s/AKfycbw2NB4gmeie3kVcfBlgINLKGXzQwV9G4-tO2OXiQiOYc-56FGIFi-5XznzyORHry48Xww/exec?action=FetchData";
+    var baseUrl = "https://script.google.com/macros/s/AKfycbwk6rBZ-rXkqtJTJe3bk6XNtPHTBqw5BPccTAJb7-0CWFz8ntRc0WPhUNfDDk6xetdfbA/exec?action=FetchData";
 
     $("#dataTable").DataTable({
         ajax: {
@@ -957,6 +818,78 @@ function onReload() {
             // Save the file
             saveAs(new Blob([s2ab(wbout)], { type: "application/octet-stream" }), 'data.xlsx');
         });
+        const menuIcon = document.getElementById("menu-icon");
+        const menuList = document.getElementById("menu-list");
+
+        menuIcon.addEventListener("click", () => {
+            menuList.classList.toggle("visible");
+        });
+async function updateForm() {
+    try {
+        // Get the form element
+        const form = document.getElementById('myForm');
+        if (!form) throw new Error('Form element not found');
+
+        // Create FormData object from the form
+        const formData = new FormData(form);
+
+        // Log FormData key-value pairs
+        formData.forEach((value, key) => {
+            console.log(`${key}: ${value}`);
+        });
+
+        // Append additional parameters if needed
+        formData.append('action', 'Update');
+        formData.append('sh', 'Data');
+
+        // Disable the submit button to prevent multiple submissions
+        const submitButton = document.getElementById('submitBtn');
+        if (!submitButton) throw new Error('Submit button not found');
+        submitButton.disabled = true;
+
+        // Show loading indicator
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        if (loadingIndicator) loadingIndicator.style.display = 'block';
+
+        // Send the POST request
+        const response = await fetch('https://script.google.com/macros/s/AKfycbwk6rBZ-rXkqtJTJe3bk6XNtPHTBqw5BPccTAJb7-0CWFz8ntRc0WPhUNfDDk6xetdfbA/exec', {
+    method: 'POST',
+    body: formData
+    });
+
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const result = await response.text();
+        console.log("Server Response:", result);
+
+        alert("Data updated successfully!");
+        $('#myModal').modal('hide');
+
+        // Refresh the DataTable
+        const table = $('#dataTable').DataTable();
+        table.ajax.reload();
+
+    } catch (error) {
+        console.error('Update Error:', error);
+        alert("Error updating data. Please check the console for details.");
+    } finally {
+        // Re-enable the submit button
+        const submitButton = document.getElementById('submitBtn');
+        if (submitButton) {
+            submitButton.disabled = false;
+        }
+
+        // Hide the loading indicator
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        if (loadingIndicator) {
+            loadingIndicator.style.display = 'none';
+        }
+    }
+}
+
         function submitUpdate() {
     var formData = new FormData(document.getElementById('updateForm'));
     var data = {};
@@ -964,7 +897,7 @@ function onReload() {
 
     const urlEncodedData = new URLSearchParams(data).toString();
 
-    fetch('https://script.google.com/macros/s/AKfycbw2NB4gmeie3kVcfBlgINLKGXzQwV9G4-tO2OXiQiOYc-56FGIFi-5XznzyORHry48Xww/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbwk6rBZ-rXkqtJTJe3bk6XNtPHTBqw5BPccTAJb7-0CWFz8ntRc0WPhUNfDDk6xetdfbA/exec', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -985,7 +918,7 @@ function deleteRow(id) {
 
     if (password === "mts170899") {
         $.ajax({
-    url: 'https://script.google.com/macros/s/AKfycbw2NB4gmeie3kVcfBlgINLKGXzQwV9G4-tO2OXiQiOYc-56FGIFi-5XznzyORHry48Xww/exec',
+    url: 'https://script.google.com/macros/s/AKfycbwk6rBZ-rXkqtJTJe3bk6XNtPHTBqw5BPccTAJb7-0CWFz8ntRc0WPhUNfDDk6xetdfbA/exec',
     type: 'GET',
     data: {
         action: 'Delete',
@@ -1155,7 +1088,7 @@ function editRow(id) {
             });
 
             $.ajax({
-                url: 'https://script.google.com/macros/s/AKfycbw2NB4gmeie3kVcfBlgINLKGXzQwV9G4-tO2OXiQiOYc-56FGIFi-5XznzyORHry48Xww/exec?action=FetchData', // Update with your URL
+                url: 'https://script.google.com/macros/s/AKfycbwk6rBZ-rXkqtJTJe3bk6XNtPHTBqw5BPccTAJb7-0CWFz8ntRc0WPhUNfDDk6xetdfbA/exec?action=FetchData', // Update with your URL
                 type: 'POST', // Or 'GET' based on your API design
                 data: {
                     action: 'Update', // Indicate the action to perform
